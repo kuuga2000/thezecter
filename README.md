@@ -1,6 +1,6 @@
 # thezecter development container
 
-An Ubuntu 26.04 development environment that works with plain Docker Compose or VS Code Dev Containers. The image includes Rust, Node.js, pnpm, Go, Python, Docker CLI and Compose, Git, GitHub CLI (`gh`), and Vim.
+An Ubuntu 26.04 development environment that works with plain Docker Compose or VS Code Dev Containers. The image includes Rust, Node.js, pnpm, Go, Python, Docker CLI and Compose, Git, GitHub CLI (`gh`), Vim, Codex CLI, Claude Code CLI, and GitHub Copilot CLI.
 
 ## Start with Docker Compose
 
@@ -25,7 +25,7 @@ Open this repository in VS Code and run **Dev Containers: Reopen in Container**.
 
 ## Tool versions
 
-Rust uses the latest stable release available when the image is built. Node.js, pnpm, Go, and Python use the latest releases selected by `.devcontainer/mise.toml` at build time. Docker's build cache may reuse installed versions. To check for newer versions, run:
+Rust uses the latest stable release available when the image is built. Node.js, pnpm, Go, and Python use the latest releases selected by `.devcontainer/mise.toml` at build time. Codex CLI, Claude Code, and Copilot CLI are also installed during the build. Docker's build cache may reuse installed versions. To check for newer versions, run:
 
 ```bash
 docker compose build --no-cache
@@ -43,7 +43,7 @@ Docker named volumes keep these directories across container rebuilds:
 
 Docker Compose creates these volumes automatically. Their names stay the same if you change the Compose project name. To reuse volumes managed outside this Compose project, uncomment `external: true` for each volume in `compose.yaml`.
 
-These volumes start empty and are separate from the host's home directory. Sign in to Codex and Claude Code inside the container when you first use them. The Copilot volume provides storage if you install Copilot CLI; the CLI itself is not included. GitHub CLI (`gh`) authentication is not stored in these volumes.
+These volumes start empty and are separate from the host's home directory. Start `codex`, `claude`, or `copilot` in the container and sign in when prompted. GitHub CLI (`gh`) authentication is not stored in these volumes.
 
 ## License
 

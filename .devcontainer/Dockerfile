@@ -32,10 +32,24 @@ RUN groupmod --new-name thezecter ubuntu \
     && printf 'thezecter ALL=(ALL) NOPASSWD:ALL\n' > /etc/sudoers.d/thezecter \
     && chmod 0440 /etc/sudoers.d/thezecter
 
+ENV HOME=/home/thezecter
 ENV CARGO_HOME=/home/thezecter/.cargo
-ENV PATH="/home/thezecter/.cargo/bin:${PATH}"
+ENV PATH="/home/thezecter/.local/bin:/home/thezecter/.cargo/bin:${PATH}"
 ENV CLAUDE_CONFIG_DIR=/home/thezecter/.claude
 
 WORKDIR /workspace
 
 USER thezecter
+
+RUN install -d /home/thezecter/.local/share/codex-installer \
+    && curl -fsSL https://chatgpt.com/codex/install.sh \
+      | CODEX_HOME=/home/thezecter/.local/share/codex-installer CODEX_NON_INTERACTIVE=1 sh \
+    && codex --version
+
+RUN curl -fsSL https://gh.io/copilot-install | bash \
+    && copilot --version
+
+RUN curl -fsSL https://claude.ai/install.sh -o /tmp/claude-install.sh \
+    && bash /tmp/claude-install.sh \
+    && rm /tmp/claude-install.sh \
+    && claude --version
