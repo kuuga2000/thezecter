@@ -1,6 +1,6 @@
 # thezecter development container
 
-An Ubuntu 26.04 development environment that works with plain Docker Compose or VS Code Dev Containers. The image includes Rust, Node.js, Go, Python, Docker CLI and Compose, Git, GitHub CLI (`gh`), and Vim.
+An Ubuntu 26.04 development environment that works with plain Docker Compose or VS Code Dev Containers. The image includes Rust, Node.js, pnpm, Go, Python, Docker CLI and Compose, Git, GitHub CLI (`gh`), and Vim.
 
 ## Start with Docker Compose
 
@@ -25,7 +25,7 @@ Open this repository in VS Code and run **Dev Containers: Reopen in Container**.
 
 ## Tool versions
 
-Rust uses the latest stable release available when the image is built. Node.js, Go, and Python use the latest releases selected by `.devcontainer/mise.toml` at build time. Docker's build cache may reuse installed versions. To check for newer versions, run:
+Rust uses the latest stable release available when the image is built. Node.js, pnpm, Go, and Python use the latest releases selected by `.devcontainer/mise.toml` at build time. Docker's build cache may reuse installed versions. To check for newer versions, run:
 
 ```bash
 docker compose build --no-cache

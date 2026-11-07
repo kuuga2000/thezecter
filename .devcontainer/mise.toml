@@ -1,4 +1,5 @@
 [tools]
 node = "latest"
+pnpm = "latest"
 go = "latest"
 python = "latest"
