@@ -1,0 +1,7 @@
+services: {}
+# Example: mount a folder from this repository into the container.
+# To use it, replace `services: {}` above with:
+# services:
+#   zect:
+#     volumes:
+#       - ./data:/workspace/data
