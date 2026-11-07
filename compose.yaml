@@ -1,7 +1,9 @@
-name: devcontainer
+name: thezecter-workspace
 
 services:
-  devcontainer:
+  zect:
+    image: thezecter-dev:latest
+    container_name: thezecter-dev
     build:
       context: .
       dockerfile: .devcontainer/Dockerfile
@@ -17,9 +19,14 @@ services:
       - copilot-data:/home/thezecter/.copilot
 
 volumes:
+  # Uncomment external: true to use an existing volume managed outside this project.
+  # External volumes must be created before running docker compose up.
   codex-data:
     name: codex-data
+    # external: true
   claude-data:
     name: claude-data
+    # external: true
   copilot-data:
     name: copilot-data
+    # external: true

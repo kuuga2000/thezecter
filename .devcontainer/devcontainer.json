@@ -1,7 +1,7 @@
 {
   "name": "Ubuntu 26.04",
   "dockerComposeFile": "../compose.yaml",
-  "service": "devcontainer",
+  "service": "zect",
   "workspaceFolder": "/workspace",
   "remoteUser": "thezecter",
   "shutdownAction": "stopCompose",
