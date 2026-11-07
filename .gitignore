@@ -1,0 +1,23 @@
+# Local configuration and bind-mounted data
+.env
+.env.*
+!.env.example
+/compose.override.yaml
+/data/
+
+# Local tool credentials
+/.codex/
+/.claude/
+/.copilot/
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+
+# Language build artifacts
+node_modules/
+target/
+__pycache__/
+*.py[cod]
+.venv/
