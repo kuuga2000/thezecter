@@ -4,6 +4,8 @@
 !.env.example
 /compose.override.yaml
 /data/
+/devkit/
+/dev/
 
 # Local tool credentials
 /.codex/
