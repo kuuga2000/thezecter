@@ -1,0 +1,22 @@
+{
+  "name": "Ubuntu 26.04",
+  "dockerComposeFile": "../compose.yaml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "thezecter",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "OpenAI.chatgpt",
+        "anthropic.claude-code",
+        "rust-lang.rust-analyzer",
+        "golang.Go",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "dbaeumer.vscode-eslint",
+        "ms-azuretools.vscode-containers"
+      ]
+    }
+  }
+}

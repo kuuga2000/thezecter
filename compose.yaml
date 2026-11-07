@@ -1,0 +1,25 @@
+name: devcontainer
+
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    user: thezecter
+    group_add:
+      - "${DOCKER_GID:-1001}"
+    command: sleep infinity
+    volumes:
+      - .:/workspace
+      - /var/run/docker.sock:/var/run/docker.sock
+      - codex-data:/home/thezecter/.codex
+      - claude-data:/home/thezecter/.claude
+      - copilot-data:/home/thezecter/.copilot
+
+volumes:
+  codex-data:
+    name: codex-data
+  claude-data:
+    name: claude-data
+  copilot-data:
+    name: copilot-data
