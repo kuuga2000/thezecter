@@ -19,6 +19,15 @@ services:
       - claude-data:/home/thezecter/.claude
       - copilot-data:/home/thezecter/.copilot
 
+  valkey:
+    image: valkey/valkey:latest
+    container_name: thezecter-valkey
+    command: ["valkey-server", "--appendonly", "yes"]
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - valkey-data:/data
+
 volumes:
   # Uncomment external: true to use an existing volume managed outside this project.
   # External volumes must be created before running docker compose up.
@@ -31,3 +40,4 @@ volumes:
   copilot-data:
     name: copilot-data
     # external: true
+  valkey-data:

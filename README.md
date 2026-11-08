@@ -19,6 +19,8 @@ The container uses the host Docker daemon through `/var/run/docker.sock`. The Co
 DOCKER_GID=$(stat -c %g /var/run/docker.sock) docker compose up -d --build
 ```
 
+Valkey is available to the dev container at `valkey:6379` and to applications on the Docker host at `127.0.0.1:6379`. Its data is stored in the `valkey-data` volume.
+
 ## Use VS Code Dev Containers
 
 Open this repository in VS Code and run **Dev Containers: Reopen in Container**. VS Code uses the same Compose service and Dockerfile, then installs the extensions listed in `.devcontainer/devcontainer.json`. Plain `docker compose` does not install VS Code extensions.
