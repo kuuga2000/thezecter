@@ -10,6 +10,7 @@
       "extensions": [
         "OpenAI.chatgpt",
         "anthropic.claude-code",
+        "GitHub.copilot",
         "rust-lang.rust-analyzer",
         "golang.Go",
         "ms-python.python",
