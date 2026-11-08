@@ -1,6 +1,6 @@
 {
   "name": "Ubuntu 26.04",
-  "dockerComposeFile": "../compose.yaml",
+  "dockerComposeFile": ["../compose.yaml", "../compose.override.yaml"],
   "service": "zect",
   "workspaceFolder": "/workspace",
   "remoteUser": "thezecter",

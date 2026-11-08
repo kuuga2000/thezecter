@@ -25,7 +25,7 @@ Valkey is available to the dev container at `valkey:6379` and to applications on
 
 ## Use VS Code Dev Containers
 
-Open this repository in VS Code and run **Dev Containers: Reopen in Container**. VS Code uses the same Compose service and Dockerfile, then installs the extensions listed in `.devcontainer/devcontainer.json`. Plain `docker compose` does not install VS Code extensions.
+Create `compose.override.yaml` from `compose.override.yaml.example` if it does not exist, then open this repository in VS Code and run **Dev Containers: Reopen in Container**. VS Code loads both Compose files, including local mounts such as `${HOME}/dev:/workspace/dev`, and installs the extensions listed in `.devcontainer/devcontainer.json`. Plain `docker compose` does not install VS Code extensions.
 
 ## Tool versions
 

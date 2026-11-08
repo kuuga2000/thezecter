@@ -5,3 +5,4 @@ services: {}
 #   zect:
 #     volumes:
 #       - ./data:/workspace/data
+#       - ${HOME}/dev:/workspace/dev
