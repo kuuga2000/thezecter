@@ -10,6 +10,9 @@ services:
     user: thezecter
     group_add:
       - "${DOCKER_GID:-1001}"
+    # Codex's bubblewrap sandbox needs user namespaces blocked by Docker's default seccomp profile.
+    security_opt:
+      - seccomp=unconfined
     command: sleep infinity
     volumes:
       - .:/workspace

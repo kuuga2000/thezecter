@@ -4,7 +4,7 @@ COPY --from=ghcr.io/jdx/mise:2026.10.4 /usr/local/bin/mise /usr/local/bin/mise
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-      build-essential ca-certificates curl docker.io docker-compose-v2 gh git libatomic1 openssh-client sudo vim \
+      bubblewrap build-essential ca-certificates curl docker.io docker-compose-v2 gh git libatomic1 openssh-client sudo vim \
       libbz2-dev libffi-dev liblzma-dev libreadline-dev libsqlite3-dev libssl-dev \
       tk-dev uuid-dev zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*

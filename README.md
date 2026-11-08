@@ -19,6 +19,8 @@ The container uses the host Docker daemon through `/var/run/docker.sock`. The Co
 DOCKER_GID=$(stat -c %g /var/run/docker.sock) docker compose up -d --build
 ```
 
+Codex uses `bubblewrap` for its Linux sandbox. The `zect` service disables Docker's default seccomp profile so `bubblewrap` can create user namespaces; processes in `zect` therefore have less Docker syscall filtering.
+
 Valkey is available to the dev container at `valkey:6379` and to applications on the Docker host at `127.0.0.1:6379`. Its data is stored in the `valkey-data` volume.
 
 ## Use VS Code Dev Containers
